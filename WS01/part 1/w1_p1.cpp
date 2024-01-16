@@ -3,7 +3,7 @@
 #include <fstream>
 #include "event.h"
 #include "event.h"
-
+//test
 // Cheching if header guards exist and follow convention.
 #ifndef SENECA_EVENT_H
     #error "The header guard for 'Event.h' doesn't follow the convention!"
