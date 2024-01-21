@@ -2,6 +2,7 @@
 #include <iomanip>
 #include <fstream>
 #include "event.h"
+#include "event.h"
 
 
 // Cheching if header guards exist and follow convention.

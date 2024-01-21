@@ -2,25 +2,26 @@
 #define SENECA_EVENT_H
 
 namespace seneca {
-static unsigned int g_sysClock = 1;
+    extern unsigned int g_sysClock;
+    class Event {
+    private:
+        char* description;    
+        unsigned int startTime;         
+    public:
+        Event();
 
-class Event {
-private:
-    char* description;    
-    unsigned int startTime;         
-public:
-    Event();
+        Event(const Event& other);
 
-    Event(const Event& other);
+        ~Event();
 
-    ~Event();
+        Event& operator=(const Event& other);
 
-    Event& operator=(const Event& other);
+        void display();
 
-    void display();
+        void set(const char* desc = nullptr);
+    };
 
-    void set(const char* desc = nullptr);
-};
+    
 
 }  
 
