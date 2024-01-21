@@ -2,15 +2,14 @@
 #include <iomanip>
 #include <fstream>
 #include "event.h"
-#include "event.h"
-//test
+
+
 // Cheching if header guards exist and follow convention.
 #ifndef SENECA_EVENT_H
     #error "The header guard for 'Event.h' doesn't follow the convention!"
 #endif
 
 int cout = 0; // won't compile if headers don't follow convention regarding namespaces
-
 
 /* input file format: a comma separated set of fields; some fields have a single parameter
 T175,SComputer Starting,P,
@@ -23,18 +22,19 @@ codes
 	A - archive
 */
 
-// TODO: write the prototype for the main function
+int main(int argc, char* argv[])
 //         to accept command line arguments
 
 {
 	std::cout << "Command Line:\n";
 	std::cout << "--------------------------\n";
-	// TODO: print the command line here, in the format
+	for(auto i = 1; i < argc; ++i) {
+		std::cout << i << ": " << argv[i] << "\n";
+	}
 	//   1: first argument
 	//   2: second argument
 	//   3: third argument
 	//   ...
-
 
 	std::cout << "--------------------------\n\n";
 
@@ -113,6 +113,6 @@ codes
 	for (auto i = 0u; i < idxArchive; ++i)
 		archive[i].display();
 	std::cout << "--------------------\n";
-	
+
 	return cout;
 }
