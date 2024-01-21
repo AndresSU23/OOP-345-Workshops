@@ -29,8 +29,8 @@ int main(int argc, char* argv[])
 {
 	std::cout << "Command Line:\n";
 	std::cout << "--------------------------\n";
-	for(auto i = 1; i < argc; ++i) {
-		std::cout << i << ": " << argv[i] << "\n";
+	for(auto i = 0; i < argc; ++i) {
+		std::cout << " " << i << ": " << argv[i] << "\n";
 	}
 	//   1: first argument
 	//   2: second argument
