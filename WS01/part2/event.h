@@ -5,8 +5,8 @@ namespace seneca {
     extern unsigned int g_sysClock;
     class Event {
     private:
-        char* description;    
-        unsigned int startTime;         
+        char* description{nullptr};
+        unsigned int startTime{ 0 };
     public:
         Event();
 

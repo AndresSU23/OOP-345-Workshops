@@ -45,7 +45,7 @@ namespace seneca {
     }
 
     void Event::set(const char* desc) {
-        delete[] description;
+        if(description) delete[] description;
         if (desc && strlen(desc)) {
             description = new char[strlen(desc) + 1];
             std::strcpy(description, desc);
