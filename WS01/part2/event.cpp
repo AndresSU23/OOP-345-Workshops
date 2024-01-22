@@ -26,7 +26,7 @@ namespace seneca {
     // Query to display the content of an Event instance
     void Event::display() {
         static int counter = 1; 
-        std::cout << " " << counter << ". ";
+        std::cout << std::setw(2) << std::setfill(' ') << counter << ". ";
 
         int hours = startTime / 3600;
         int minutes = (startTime % 3600) / 60;
