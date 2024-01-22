@@ -1,0 +1,42 @@
+/***********************************************************************
+// Workshop 1 Part 2
+// Module: Reflection
+// File: refelct.txt
+// Version 1.0
+// Author
+// Description
+//	Name      : David Andres Sanchez Umbarila
+//	Student ID: 140273228
+//	Email     : dasanchez-umbarila@myseneca.ca
+//
+//	I have done all the coding by myself and only copied the code
+//	 that my professor provided to complete my workshops and
+//	 assignments.
+// Revision History
+// -----------------------------------------------------------
+// Name                 Date            Reason
+***********************************************************************/
+
+During this workshop we focus on learning about internal and external 
+linkage for manipulating and accessing variables across different parts 
+of the code. The most common example of this are the external linkage 
+which make variables visible accords different source files, global 
+variable form part of this category since they can be seen across the 
+whole program. The example for this would be the g_sysClock variable 
+which generate a link to actual declaration of g_sysClock inside 
+event.cpp: extern on its own it's not declaring the variable but 
+indicating the compiler to go out of scope to find it. In the other 
+side we have the internal linkage which is only visible across the same 
+source file. The example of this is the variable counter who remains in 
+memory for the lifetime of the program regardless of the changes made 
+to the module itself: this variable is allocated at the beginning of the 
+run, even if its declaration it's called numerous time only one would 
+exist. Finally, for the adjustments made in part 2 it was necessary to 
+implement the rule of 3 to manage the dynamic memory of the description 
+and the assignment requirements in the main file. This ensured proper 
+handling of memory and met the necessary program specifications.
+
+
+
+
+
