@@ -4,6 +4,7 @@
 #include <cstring>
 
 #include "event.h"
+#include <iomanip>
 
 namespace seneca {
     unsigned int g_sysClock = 1;
@@ -25,14 +26,17 @@ namespace seneca {
     // Query to display the content of an Event instance
     void Event::display() {
         static int counter = 1; 
-        std::cout << counter << ". ";
+        std::cout << " " << counter << ". ";
 
         int hours = startTime / 3600;
         int minutes = (startTime % 3600) / 60;
         int seconds = startTime % 60;
 
         if (description && strlen(description)) {
-            printf("%02d:%02d:%02d => %s\n", hours, minutes, seconds, description);    
+            std::cout << std::setfill('0') << std::setw(2) << hours << ":"
+                << std::setfill('0') << std::setw(2) << minutes << ":"
+                << std::setfill('0') << std::setw(2) << seconds << " => "
+                << description << std::endl;
         } else {
             std::cout << "| No Event |" << std::endl;
         }
