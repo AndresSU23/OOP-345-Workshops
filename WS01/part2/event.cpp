@@ -12,15 +12,15 @@ namespace seneca {
     Event::Event(): startTime(seneca::g_sysClock) {
         description = new char[128];
     }
-    Event::Event(const Event& other) : startTime(other.startTime) {
+    Event::Event(const Event& other) {
         *this = other;
     }
     Event::~Event() {
         delete[] description;
     }
     Event& Event::operator=(const Event& other){
-        startTime = other.startTime;
         set(other.description);
+        startTime = other.startTime;
         return *this;
     }
     // Query to display the content of an Event instance
