@@ -5,7 +5,7 @@
 namespace seneca {
 	class StringSet {
 		std::string* m_arr{};
-		int m_size{ 0 };
+		size_t m_size{ 0 };
 
 	public:
 		StringSet() = default;

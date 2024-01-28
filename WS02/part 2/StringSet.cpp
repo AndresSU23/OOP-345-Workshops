@@ -54,7 +54,7 @@ namespace seneca {
 	std::string StringSet::operator[](size_t i) const
 	{
 		std::string emptyString;
-		return (static_cast<int>(i) >= m_size) ? emptyString : m_arr[i];
+		return (i >= m_size) ? emptyString : m_arr[i];
 	}
 	StringSet& StringSet::operator=(const StringSet& other) {
 		if (this != &other) { 
