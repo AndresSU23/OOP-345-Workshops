@@ -26,7 +26,7 @@ namespace seneca {
 			os << std::left << std::setw(21) << timedEvents[i].m_name;
 			os << std::right << std::setw(13) << timedEvents[i].m_duration.count() << ' ' << timedEvents[i].m_timeUnit << '\n';
 		}
-		os << "--------------------------";
+		os << "--------------------------\n";
 		return os;
 	}
 }
