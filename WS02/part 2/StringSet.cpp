@@ -19,7 +19,7 @@ namespace seneca {
 			fileStream.seekg(0, std::ios::beg);
 
 			m_arr = new std::string[++m_size];
-			int i = 0;
+			auto i = 0;
 			while (fileStream.get(ch)) {
 				if (ch == ' ') {
 					i++;
@@ -33,14 +33,14 @@ namespace seneca {
 	}
 	StringSet::StringSet(const StringSet& other) : m_size(other.m_size) {
 		m_arr = new std::string[m_size];
-		for (int i = 0; i < m_size; ++i) {
+		for (auto i = 0; i < m_size; ++i) {
 			m_arr[i] = other.m_arr[i];
 		}
 	}
 	StringSet::StringSet(StringSet&& other) noexcept {
 		m_size = other.m_size;
 		m_arr = new std::string[m_size];
-		for (int i = 0; i < m_size; ++i) {
+		for (auto i = 0; i < m_size; ++i) {
 			m_arr[i] = other.m_arr[i];
 		}
 		other.m_size = 0;
@@ -62,7 +62,7 @@ namespace seneca {
 
 			m_size = other.m_size;
 			m_arr = new std::string[m_size];
-			for (int i = 0; i < m_size; ++i) {
+			for (auto i = 0; i < m_size; ++i) {
 				m_arr[i] = other.m_arr[i];
 			}
 		}
@@ -74,7 +74,7 @@ namespace seneca {
 
 			m_size = other.m_size;
 			m_arr = new std::string[m_size];
-			for (int i = 0; i < m_size; ++i) {
+			for (auto i = 0; i < m_size; ++i) {
 				m_arr[i] = other.m_arr[i];
 			}
 			other.m_size = 0;
