@@ -1,3 +1,21 @@
+/***********************************************************************
+// Workshop 2 Part 2
+// Module: StringSet
+// File: StringSet.cpp
+// Version 1.0
+// Author
+// Description
+//	Name      : David Andres Sanchez Umbarila
+//	Student ID: 140273228
+//	Email     : dasanchez-umbarila@myseneca.ca
+//
+//	I have done all the coding by myself and only copied the code
+//	 that my professor provided to complete my workshops and
+//	 assignments.
+// Revision History
+// -----------------------------------------------------------
+// Name                 Date            Reason
+***********************************************************************/
 #include <iostream>
 #include <fstream>
 #include "StringSet.h"
@@ -39,12 +57,8 @@ namespace seneca {
 	}
 	StringSet::StringSet(StringSet&& other) noexcept {
 		m_size = other.m_size;
-		m_arr = new std::string[m_size];
-		for (size_t i = 0; i < m_size; ++i) {
-			m_arr[i] = other.m_arr[i];
-		}
+		m_arr = other.m_arr;  
 		other.m_size = 0;
-		delete[] other.m_arr;
 		other.m_arr = nullptr;
 	}
 	StringSet::~StringSet() {
@@ -73,12 +87,8 @@ namespace seneca {
 			delete[] m_arr;
 
 			m_size = other.m_size;
-			m_arr = new std::string[m_size];
-			for (size_t i = 0; i < m_size; ++i) {
-				m_arr[i] = other.m_arr[i];
-			}
+			m_arr = other.m_arr;  
 			other.m_size = 0;
-			delete[] other.m_arr;
 			other.m_arr = nullptr;
 		}
 		return *this;

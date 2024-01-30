@@ -1,0 +1,41 @@
+/***********************************************************************
+// Workshop 2 Part 2
+// Module: Reflection
+// File: refelct.txt
+// Version 1.0
+// Author
+// Description
+//	Name      : David Andres Sanchez Umbarila
+//	Student ID: 140273228
+//	Email     : dasanchez-umbarila@myseneca.ca
+//
+//	I have done all the coding by myself and only copied the code
+//	 that my professor provided to complete my workshops and
+//	 assignments.
+// Revision History
+// -----------------------------------------------------------
+// Name                 Date            Reason
+***********************************************************************/
+During this workshop we visited new concepts like the move constructors 
+and operators, the String library and the chrono library which allowed 
+us to work with real time measurements.
+
+In the first place, with the introduction of movement function we saw 
+an import performance difference between the traditional copying and 
+this method. This occurs because move is just transferring the data of 
+objects instead of duplicating, the main example of this occurs when 
+transferring the array instead of creating a new array and assigning 
+each element the only thing changing is the ownership of the address.
+
+With the introduction of string the management of these types becomes 
+easier, even with this new approach we still needed to read the file 
+two time one for sizing the array of strings and a second one for 
+allocating it using temporary variables. To improve this we could 
+implement the use of vectors which would allow for dynamic sizing.
+
+Finally, with the introduction of the chrono library we found two 
+different ways to refer to timestamps the steady_clock and system_clock. 
+The main difference between this is two is their final purpose, 
+system_clock is used to tell real time clock like calendar time. On 
+the other hand steady_clock offers a really accurate measure of time 
+which is why is used or time duration calculation thanks to its precision.
