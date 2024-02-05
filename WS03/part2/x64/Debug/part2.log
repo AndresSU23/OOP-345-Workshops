@@ -1,0 +1,33 @@
+﻿  w3_p2.cpp
+D:\Projects\OOP-345-Workshops\WS03\part2\Set.h(45,4): warning C4984: 'if constexpr' is a C++17 language extension
+  (compiling source file 'w3_p2.cpp')
+  D:\Projects\OOP-345-Workshops\WS03\part2\Set.h(45,4):
+  the template instantiation context (the oldest one first) is
+  	D:\Projects\OOP-345-Workshops\WS03\part2\Set.h(57,3):
+  	see reference to class template instantiation 'seneca::Set<T>' being compiled
+  
+D:\Projects\OOP-345-Workshops\WS03\part2\Set.h(34,41): warning C4267: 'argument': conversion from 'size_t' to 'unsigned int', possible loss of data
+  (compiling source file 'w3_p2.cpp')
+  D:\Projects\OOP-345-Workshops\WS03\part2\Set.h(34,41):
+  the template instantiation context (the oldest one first) is
+  	D:\Projects\OOP-345-Workshops\WS03\part2\w3_p2.cpp(131,70):
+  	see reference to class template instantiation 'seneca::Set<seneca::Pair>' being compiled
+  	D:\Projects\OOP-345-Workshops\WS03\part2\Set.h(32,8):
+  	while compiling class template member function 'bool seneca::Set<seneca::Pair>::add(const T &)'
+          with
+          [
+              T=seneca::Pair
+          ]
+  
+D:\Projects\OOP-345-Workshops\WS03\part2\Collection.h(40,11): warning C4267: 'return': conversion from 'size_t' to 'unsigned int', possible loss of data
+  (compiling source file 'w3_p2.cpp')
+  D:\Projects\OOP-345-Workshops\WS03\part2\Collection.h(40,11):
+  the template instantiation context (the oldest one first) is
+  	D:\Projects\OOP-345-Workshops\WS03\part2\w3_p2.cpp(110,40):
+  	see reference to class template instantiation 'seneca::Collection<seneca::Pair,50>' being compiled
+  	D:\Projects\OOP-345-Workshops\WS03\part2\Collection.h(39,16):
+  	while compiling class template member function 'unsigned int seneca::Collection<seneca::Pair,50>::size(void) const'
+  		D:\Projects\OOP-345-Workshops\WS03\part2\w3_p2.cpp(115,61):
+  		see the first reference to 'seneca::Collection<seneca::Pair,50>::size' in 'main'
+  
+  part2.vcxproj -> D:\Projects\OOP-345-Workshops\WS03\part2\x64\Debug\part2.exe

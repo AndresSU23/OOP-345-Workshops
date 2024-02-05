@@ -1,0 +1,31 @@
+/***********************************************************************
+// Workshop 3 Part 2
+// Module: Reflection
+// File: refelct.txt
+// Version 1.0
+// Author
+// Description
+//	Name      : David Andres Sanchez Umbarila
+//	Student ID: 140273228
+//	Email     : dasanchez-umbarila@myseneca.ca
+//
+//	I have done all the coding by myself and only copied the code
+//	 that my professor provided to complete my workshops and
+//	 assignments.
+// Revision History
+// -----------------------------------------------------------
+// Name                 Date            Reason
+***********************************************************************/
+
+In this workshop, we specialized the add() member function in the Set 
+class to enforce uniqueness within the collection, ensuring that an item
+ is not added if it already exists. The overridden add() function employs 
+custom comparison logic based on the type T; for instance, in the 
+specialization for double, we implemented a custom customAbs() function 
+to avoid using cmath. The class variable dummy was defined outside the
+ class definition, particularly in the template specialization, to guarantee 
+instantiation only once for the entire program, preventing linker errors. 
+These design decisions illustrate the flexibility and power of template 
+programming in C++, addressing the unique requirements of a set collection 
+and demonstrating good practices in template specialization and class 
+variable management.
