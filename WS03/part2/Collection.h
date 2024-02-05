@@ -58,19 +58,13 @@ namespace seneca {
 		}
 
 		T operator[](unsigned int index) const {
-			if (index < m_size)
-			{
-				return m_elements[index];
-			}
-			else
-			{
-				return dummy;
-			}
-
+			if (index < m_size) { return m_elements[index]; }
+			return dummy;
+		
 		};
 	};
-	template<typename T, unsigned int Capacity>
-	T Collection<T, Capacity>::dummy{};
+	template<typename T, unsigned int CAPACITY>
+	T Collection<T, CAPACITY>::dummy{};
 	template<>
 	Pair Collection<Pair, 100>::dummy = Pair("No Key", "No Value");
 }

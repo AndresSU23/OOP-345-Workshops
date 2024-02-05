@@ -17,15 +17,15 @@
 // Name                 Date            Reason
 ***********************************************************************/
 
-In this workshop, we specialized the add() member function in the Set 
-class to enforce uniqueness within the collection, ensuring that an item
- is not added if it already exists. The overridden add() function employs 
-custom comparison logic based on the type T; for instance, in the 
-specialization for double, we implemented a custom customAbs() function 
-to avoid using cmath. The class variable dummy was defined outside the
- class definition, particularly in the template specialization, to guarantee 
-instantiation only once for the entire program, preventing linker errors. 
-These design decisions illustrate the flexibility and power of template 
-programming in C++, addressing the unique requirements of a set collection 
-and demonstrating good practices in template specialization and class 
-variable management.
+In the development of the Set class, our emphasis on making the add() 
+function unique emphasized the important role it plays in guaranteeing element 
+uniqueness. By optimizing the comparative logic based on T's, especially 
+in the case of two identifiers treated as equivalent with the lowest
+ difference, we adapted our set collection Strategic decision to define the
+ out-of-class class variable ` dummy` internally, using template 
+specification, helped to bias potential linker errors by ensuring that 
+single instances throughout the program Our choice to combine and use 
+Collection and Set as header modules only proved useful in on. This not
+ only simplified the codebase, but also made it clearer and easier to deliver.
+ This workshop was a challenging learning experience, and deepened our 
+understanding of subtle concepts such as template specialization in C++ programming

@@ -32,7 +32,7 @@ namespace seneca {
 		bool add(const T& item) override {
 			for (size_t i = 0; i < this->size(); ++i) {
 				if (areEqual(item, this->operator[](i))) {
-					return false;  // Item already exists in the set
+					return false;  
 				}
 			}
 
@@ -40,7 +40,6 @@ namespace seneca {
 		}
 
 	private:
-		// Helper function to check equality considering specialization for double
 		bool areEqual(const T& a, const T& b) const {
 			if constexpr (std::is_same_v<T, double>) {
 				return customAbs(a - b) <= 0.01;
@@ -50,12 +49,11 @@ namespace seneca {
 			}
 		}
 
-		// Custom absolute value function for double (replace with your own implementation if needed)
 		double customAbs(double x) const {
 			return (x < 0) ? -x : x;
 		}
 	};
 
-}  // namespace seneca
+} 
 
 #endif // SENECA_SET_H
