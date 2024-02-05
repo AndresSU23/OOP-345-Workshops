@@ -36,6 +36,7 @@ namespace seneca {
 	public:
 
 		Collection() : m_size(0) {};
+		virtual ~Collection() {};
 		unsigned int size() const {
 			return m_size;
 		}
