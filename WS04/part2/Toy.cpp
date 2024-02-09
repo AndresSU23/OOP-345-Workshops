@@ -65,12 +65,12 @@ namespace seneca {
 		double tax = toy.m_salesTax * toy.m_noItems;
 		double total = subtotal + tax;
 
-		os << std::left << std::setw(4) << "Toy" << std::setw(9) << toy.m_orderId << ":"
+		os << std::left << std::setw(4) << "Toy" << std::setw(7) << toy.m_orderId << ":"
 			<< std::right << std::setw(18) << toy.m_name
-			<< std::setw(3) << toy.m_noItems << " items "
+			<< std::setw(3) << toy.m_noItems << " items"
 			<< std::setw(8) << std::fixed << std::setprecision(2) << toy.m_price << "/item "
-			<< std::setw(10) << "subtotal:" << std::setw(7) << std::fixed << std::setprecision(2) << subtotal
-			<< std::setw(7) << " tax:" << std::setw(6) << std::fixed << std::setprecision(2) << tax
+			<< std::setw(7) << "subtotal:" << std::setw(7) << std::fixed << std::setprecision(2) << subtotal
+			<< std::setw(6) << " tax:" << std::setw(6) << std::fixed << std::setprecision(2) << tax
 			<< std::setw(7) << " total:" << std::setw(7) << std::fixed << std::setprecision(2) << total << '\n';
 
 		return os;
