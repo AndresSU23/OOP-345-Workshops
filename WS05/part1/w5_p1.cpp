@@ -23,13 +23,23 @@ int main(int argc, char** argv)
 
 	// get the books
 	seneca::Book library[7];
+	size_t size = 7;
 	if (argc == 2) {
-		// TODO: load the collection of books from the file "argv[1]".
-		//       - read one line at a time, and pass it to the Book constructor
-		//       - store each book read into the array "library"
-		//       - lines that start with "#" are considered comments and should be ignored
-		//       - if the file cannot be open, print a message to standard error console and
-		//                exit from application with error code "AppErrors::CannotOpenFile"
+		std::ifstream file(argv[1]);
+		if (!file.is_open()) {
+			std::cerr << "Error: Cannot open file " << argv[1] << std::endl;
+			exit(static_cast<int>(AppErrors::CannotOpenFile));
+		}
+
+		int count = 0;
+		std::string line;
+		while (std::getline(file, line) && count < size) {
+			if (!line.empty() && line[0] != '#') {
+				library[count++] = seneca::Book(line);
+			}
+		}
+
+		file.close();
 	}
 	else
 	{
@@ -47,12 +57,24 @@ int main(int argc, char** argv)
 	//       - if the book was published in UK between 1990 and 1999 (inclussive),
 	//            multiply the price with "gbpToCadRate" and save the new price in the book object
 
+	auto fixBookPrice = [usdToCadRate, gbpToCadRate](seneca::Book& book) {
+		if (book.country() == "US") {
+			book.price() *= usdToCadRate;
+		}
+		else if (book.country() == "UK" && book.year() >= 1990 && book.year() <= 1999) {
+			book.price() *= gbpToCadRate;
+		}
+	};
+
 
 
 	std::cout << "-----------------------------------------\n";
 	std::cout << "The library content\n";
 	std::cout << "-----------------------------------------\n";
 	// TODO: iterate over the library and print each book to the screen
+	for (int i = 0; i < size; ++i) {
+		std::cout << library[i] << std::endl;
+	}
 
 
 
@@ -60,6 +82,9 @@ int main(int argc, char** argv)
 
 	// TODO: iterate over the library and update the price of each book
 	//         using the lambda defined above.
+	for (int i = 0; i < size; ++i) {
+		fixBookPrice(library[i]);
+	}
 
 
 
@@ -67,7 +92,9 @@ int main(int argc, char** argv)
 	std::cout << "The library content (updated prices)\n";
 	std::cout << "-----------------------------------------\n";
 	// TODO: iterate over the library and print each book to the screen
-
+	for (int i = 0; i < size; ++i) {
+		std::cout << library[i] << std::endl;
+	}
 
 
 	std::cout << "-----------------------------------------\n";
