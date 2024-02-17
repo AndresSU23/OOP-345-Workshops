@@ -56,7 +56,7 @@ int main(int argc, char** argv)
 
 		int count = 0;
 		std::string line;
-		while (std::getline(file, line) && count < 3) {
+		while (count < 3 && std::getline(file, line)) {
 			if (!line.empty() && line[0] != '#') {
 				count++;
 				library += seneca::Book(line);
@@ -135,7 +135,7 @@ int main(int argc, char** argv)
 
 		int count = 0;
 		std::string line;
-		while (std::getline(file, line) && count < 5) {
+		while (count < 5 && std::getline(file, line)) {
 			if (!line.empty() && line[0] != '#') {
 				movies[count++] = seneca::Movie(line);
 			}

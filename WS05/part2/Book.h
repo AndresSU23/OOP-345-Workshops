@@ -45,7 +45,6 @@ namespace seneca {
 		template<typename T>
 		void fixSpelling(T& spellChecker) { 
 			spellChecker(m_description);
-			spellChecker(m_title);
 		}
 
 		friend std::ostream& operator <<(std::ostream& os, const Book& book);
