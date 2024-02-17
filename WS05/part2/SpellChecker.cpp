@@ -23,6 +23,16 @@
 #include <iomanip>
 
 namespace seneca {
+    void SpellChecker::removeSpaces(std::string& str) {
+        while (!str.empty() && std::isspace(str.front())) {
+            str.erase(str.begin());
+        }
+
+        while (!str.empty() && std::isspace(str.back())) {
+            str.pop_back();
+        }
+    }
+
 	SpellChecker::SpellChecker(const char* filename) {
         std::ifstream file(filename);
         if (!file.is_open()) {
@@ -40,8 +50,8 @@ namespace seneca {
             std::string badWord = line.substr(0, pos);
             std::string goodWord = line.substr(pos + 1);
 
-            badWord.erase(std::remove_if(badWord.begin(), badWord.end(), ::isspace), badWord.end());
-            goodWord.erase(std::remove_if(goodWord.begin(), goodWord.end(), ::isspace), goodWord.end());
+            removeSpaces(badWord);
+            removeSpaces(goodWord);
 
             m_badWords[i] = badWord;
             m_goodWords[i] = goodWord;

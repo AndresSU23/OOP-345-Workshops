@@ -106,7 +106,7 @@ int main(int argc, char** argv)
 	std::cout << library;
 	std::cout << "-----------------------------------------\n\n";
 
-	for (int i = 0; i < library.size(); ++i) {
+	for (size_t i = 0; i < library.size(); ++i) {
 		fixBookPrice(library[i]);
 	}
 

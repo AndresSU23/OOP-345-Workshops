@@ -29,6 +29,8 @@ namespace seneca {
 		std::string m_goodWords[6];
 		int m_replaceCount[SIZE] = { 0 };
 
+		void removeSpaces(std::string& str);
+
 	public:
 		SpellChecker(const char* filename);
 
