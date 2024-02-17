@@ -202,7 +202,7 @@ int main(int argc, char** argv)
 
 	std::cout << "=========================================\n";
 	std::cout << "Wrapping up this workshop\n";
-	std::cout << "--------------- Movies  ------------------\n";
+	std::cout << "--------------- Movies ------------------\n";
 	std::cout << theCollection;
 	std::cout << "--------------- Books -------------------\n";
 	std::cout << library;
