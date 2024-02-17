@@ -1,3 +1,21 @@
+/***********************************************************************
+// Workshop 5 Part 2
+// Module: Movie
+// File: Movie.h
+// Version 1.0
+// Author
+// Description
+//	Name      : David Andres Sanchez Umbarila
+//	Student ID: 140273228
+//	Email     : dasanchez-umbarila@myseneca.ca
+//
+//	I have done all the coding by myself and only copied the code
+//	 that my professor provided to complete my workshops and
+//	 assignments.
+// Revision History
+// -----------------------------------------------------------
+// Name                 Date            Reason
+***********************************************************************/
 #pragma once
 #ifndef SENECA_MOVIE_H
 #define SENECA_MOVIE_H
@@ -18,7 +36,10 @@ namespace seneca {
 		const std::string& title() const;
 
 		template<typename T>
-		void fixSpelling(T& spellChecker) { spellChecker(m_description); }
+		void fixSpelling(T& spellChecker) { 
+			spellChecker(m_description); 
+			spellChecker(m_title);
+		}
 
 		friend std::ostream& operator <<(std::ostream& os, const Movie& movie);
 	};

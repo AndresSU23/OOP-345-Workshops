@@ -48,15 +48,20 @@ int main(int argc, char** argv)
 	// get the books
 	seneca::Collection<seneca::Book> library("Bestsellers");
 	if (argc == 5) {
-		// TODO: load the first 4 books from the file "argv[1]".
-		//       - read one line at a time, and pass it to the Book constructor
-		//       - store each book read into the collection "library" (use the += operator)
-		//       - lines that start with "#" are considered comments and should be ignored
-		//       - if the file cannot be open, print a message to standard error console and
-		//                exit from application with error code "AppErrors::CannotOpenFile"
+		std::ifstream file(argv[1]);
+		if (!file.is_open()) {
+			std::cerr << "Error: Cannot open file " << argv[1] << std::endl;
+			exit(static_cast<int>(AppErrors::CannotOpenFile));
+		}
 
-
-
+		int count = 0;
+		std::string line;
+		while (std::getline(file, line) && count < 3) {
+			if (!line.empty() && line[0] != '#') {
+				count++;
+				library += seneca::Book(line);
+			}
+		}
 
 		/*
 		 ♪ Hey, I just met you,      ♪
@@ -67,10 +72,13 @@ int main(int argc, char** argv)
 		 */
 		library.setObserver(bookAddedObserver);
 
-		// TODO: add the rest of the books from the file.
+		while (std::getline(file, line)) {
+			if (!line.empty() && line[0] != '#') {
+				library += seneca::Book(line);
+			}
+		}
 
-
-
+		file.close();
 	}
 	else
 	{
@@ -81,13 +89,15 @@ int main(int argc, char** argv)
 	double usdToCadRate = 1.3;
 	double gbpToCadRate = 1.5;
 
-	// TODO: (from part #1) create a lambda expression that fixes the price of a book accoding to the rules
-	//       - the expression should receive a single parameter of type "Book&"
-	//       - if the book was published in US, multiply the price with "usdToCadRate"
-	//            and save the new price in the book object
-	//       - if the book was published in UK between 1990 and 1999 (inclussive),
-	//            multiply the price with "gbpToCadRate" and save the new price in the book object
 
+	auto fixBookPrice = [usdToCadRate, gbpToCadRate](seneca::Book& book) {
+		if (book.country() == "US") {
+			book.price() *= usdToCadRate;
+		}
+		else if (book.country() == "UK" && book.year() >= 1990 && book.year() <= 1999) {
+			book.price() *= gbpToCadRate;
+		}
+		};
 
 
 	std::cout << "-----------------------------------------\n";
@@ -96,8 +106,9 @@ int main(int argc, char** argv)
 	std::cout << library;
 	std::cout << "-----------------------------------------\n\n";
 
-	// TODO (from part #1): iterate over the library and update the price of each book
-	//         using the lambda defined above.
+	for (int i = 0; i < library.size(); ++i) {
+		fixBookPrice(library[i]);
+	}
 
 
 
@@ -116,7 +127,19 @@ int main(int argc, char** argv)
 		//       - read one line at a time, and pass it to the Movie constructor
 		//       - store each movie read into the array "movies"
 		//       - lines that start with "#" are considered comments and should be ignored
+		std::ifstream file(argv[2]);
+		if (!file.is_open()) {
+			std::cerr << "Error: Cannot open file " << argv[2] << std::endl;
+			exit(static_cast<int>(AppErrors::CannotOpenFile));
+		}
 
+		int count = 0;
+		std::string line;
+		while (std::getline(file, line) && count < 5) {
+			if (!line.empty() && line[0] != '#') {
+				movies[count++] = seneca::Movie(line);
+			}
+		}
 
 
 
@@ -144,14 +167,13 @@ int main(int argc, char** argv)
 	std::cout << "Testing exceptions and operator[]\n";
 	std::cout << "-----------------------------------------\n";
 
-
-		// TODO: The following loop can generate generate an exception
-		//         write code to handle the exception
-		//       If an exception occurs print a message in the following format
-		//** EXCEPTION: ERROR_MESSAGE<endl>
-		//         where ERROR_MESSAGE is extracted from the exception object.
+	try {
 		for (auto i = 0u; i < 10; ++i)
 			std::cout << theCollection[i];
+	}
+	catch (const std::exception& e) {
+		std::cout << "** EXCEPTION: " << e.what() << std::endl;
+	}
 
 	std::cout << "-----------------------------------------\n\n";
 
@@ -161,11 +183,7 @@ int main(int argc, char** argv)
 	std::cout << "-----------------------------------------\n";
 	for (auto i = 3; i < argc; ++i)
 	{
-			// TODO: The following statement can generate generate an exception
-			//         write code to handle the exception
-			//       If an exception occurs print a message in the following format
-			//** EXCEPTION: ERROR_MESSAGE<endl>
-			//         where ERROR_MESSAGE is extracted from the exception object.
+		try {
 			seneca::SpellChecker sp(argv[i]);
 			for (auto j = 0u; j < library.size(); ++j)
 				library[j].fixSpelling(sp);
@@ -174,6 +192,11 @@ int main(int argc, char** argv)
 			for (auto j = 0u; j < theCollection.size(); ++j)
 				theCollection[j].fixSpelling(sp);
 			sp.showStatistics(std::cout);
+		}
+		catch (const std::exception& e) {
+			std::cout << "** EXCEPTION: " << e.what() << std::endl;
+		}
+			
 	}
 	if (argc < 3) {
 		std::cout << "** Spellchecker is empty\n";
@@ -183,7 +206,7 @@ int main(int argc, char** argv)
 
 	std::cout << "=========================================\n";
 	std::cout << "Wrapping up this workshop\n";
-	std::cout << "--------------- Movies ------------------\n";
+	std::cout << "--------------- Movies  ------------------\n";
 	std::cout << theCollection;
 	std::cout << "--------------- Books -------------------\n";
 	std::cout << library;

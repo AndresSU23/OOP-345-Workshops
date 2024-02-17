@@ -1,0 +1,37 @@
+/***********************************************************************
+// Workshop 5 Part 2
+// Module: Reflect
+// File: reflect.txt
+// Version 1.0
+// Author
+// Description
+//	Name      : David Andres Sanchez Umbarila
+//	Student ID: 140273228
+//	Email     : dasanchez-umbarila@myseneca.ca
+//
+//	I have done all the coding by myself and only copied the code
+//	 that my professor provided to complete my workshops and
+//	 assignments.
+// Revision History
+// -----------------------------------------------------------
+// Name                 Date            Reason
+***********************************************************************/
+
+Throughout this workshop, we've delved into the distinctions between 
+functors and lambda expressions, understanding when each is most suitable. 
+While functors offer versatility and reusability, lambda expressions 
+are effective for handling brief, context-specific tasks. An alternative 
+to using exceptions is the implementation of error codes or return values 
+for error handling within the SpellChecker constructor. We also recognized
+ the redundancy in the Movie and Book classes' file loading logic, 
+proposing a common base class, FileLoader, to encapsulate this 
+functionality and mitigate code duplication. Regarding default 
+constructors, while they provide flexibility, we considered whether 
+they are necessary within Movie and Book classes. If objects must always 
+be initialized from a file, the default constructor may be redundant and 
+could be removed. This workshop has not only enhanced our comprehension of 
+effective C++ programming practices but also improved our understanding of 
+exceptions and exit conditions, as well as our ability to design classes 
+and manage relationships within them. By working on these topics, 
+we've imporved our skills, facilitating the creation of more robust and 
+maintainable code.

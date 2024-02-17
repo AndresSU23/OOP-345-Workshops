@@ -1,37 +1,58 @@
+/***********************************************************************
+// Workshop 5 Part 2
+// Module: Book
+// File: Book.cpp
+// Version 1.0
+// Author
+// Description
+//	Name      : David Andres Sanchez Umbarila
+//	Student ID: 140273228
+//	Email     : dasanchez-umbarila@myseneca.ca
+//
+//	I have done all the coding by myself and only copied the code
+//	 that my professor provided to complete my workshops and
+//	 assignments.
+// Revision History
+// -----------------------------------------------------------
+// Name                 Date            Reason
+***********************************************************************/
 #include "Book.h"
 
 #include <iomanip>
 
 namespace seneca {
 	Book::Book(const std::string& strBook) {
-        size_t pos1 = 0;
-        size_t pos2 = strBook.find(',');
-        size_t lastPos = 0;
-        size_t commaCount = 0;
+        size_t pos = 0;
+        size_t nextPos = strBook.find(',');
 
-        while (pos2 != std::string::npos) {
-            std::string token = strBook.substr(pos1, pos2 - pos1);
+        m_author = strBook.substr(pos, nextPos - pos);
+        m_author.erase(0, m_author.find_first_not_of(' ')); 
+        m_author.erase(m_author.find_last_not_of(' ') + 1); 
 
-            size_t start = token.find_first_not_of(" ");
-            size_t end = token.find_last_not_of(" ");
-            token = token.substr(start, end - start + 1);
+        pos = nextPos + 1;
+        nextPos = strBook.find(',', pos);
+        m_title = strBook.substr(pos, nextPos - pos);
+        m_title.erase(0, m_title.find_first_not_of(' '));
+        m_title.erase(m_title.find_last_not_of(' ') + 1);
 
-            if (commaCount == 0) m_author = token; 
-            else if (commaCount == 1) m_title = token; 
-            else if (commaCount == 2) m_country = token; 
-            else if (commaCount == 3) m_price = std::stod(token); 
-            else if (commaCount == 4) m_pubYear = std::stoi(token); 
+        pos = nextPos + 1;
+        nextPos = strBook.find(',', pos);
+        m_country = strBook.substr(pos, nextPos - pos);
+        m_country.erase(0, m_country.find_first_not_of(' '));
+        m_country.erase(m_country.find_last_not_of(' ') + 1);
 
-            lastPos = pos2; 
-            pos1 = lastPos + 1; 
-            pos2 = strBook.find(',', pos1); 
-            commaCount++; 
-        }
+        pos = nextPos + 1;
+        nextPos = strBook.find(',', pos);
+        m_price = std::stod(strBook.substr(pos, nextPos - pos));
 
-        std::string lastToken = strBook.substr(lastPos + 1);
-        size_t start = lastToken.find_first_not_of(" ");
-        size_t end = lastToken.find_last_not_of(" ");
-        m_description = lastToken.substr(start, end - start + 1);
+        pos = nextPos + 1;
+        nextPos = strBook.find(',', pos);
+        m_pubYear = std::stoi(strBook.substr(pos, nextPos - pos));
+
+        pos = nextPos + 1;
+        m_description = strBook.substr(pos);
+        m_description.erase(0, m_description.find_first_not_of(' '));
+        m_description.erase(m_description.find_last_not_of(' ') + 1);
 	}
 
     const std::string& Book::title() const { return m_title; }
@@ -43,12 +64,12 @@ namespace seneca {
     double& Book::price() { return m_price; }
 
     std::ostream& operator<<(std::ostream& os, const Book& book) {
-        os << std::left << std::setw(20) << book.m_author << " | "
+        os << std::right << std::setw(20) << book.m_author << " | "
             << std::setw(22) << book.m_title << " | "
             << std::setw(5) << book.m_country << " | "
-            << std::setw(4) << book.m_pubYear << " | "
+            << std::setw(4) << book.m_pubYear << " | " 
             << std::fixed << std::setprecision(2) << std::setw(6) << book.m_price << " | "
-            << book.m_description;
+            << book.m_description << '\n';
         return os;
     }
 

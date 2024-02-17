@@ -1,3 +1,22 @@
+/***********************************************************************
+// Workshop 5 Part 2
+// Module: Book
+// File: Book.h
+// Version 1.0
+// Author
+// Description
+//	Name      : David Andres Sanchez Umbarila
+//	Student ID: 140273228
+//	Email     : dasanchez-umbarila@myseneca.ca
+//
+//	I have done all the coding by myself and only copied the code
+//	 that my professor provided to complete my workshops and
+//	 assignments.
+// Revision History
+// -----------------------------------------------------------
+// Name                 Date            Reason
+***********************************************************************/
+
 #pragma once
 #ifndef SENECA_BOOK_H
 #define SENECA_BOOK_H
@@ -11,7 +30,7 @@ namespace seneca {
 		std::string m_title;
 		std::string m_country;
 		size_t m_pubYear{};
-		double m_price;
+		double m_price{};
 		std::string m_description;
 
 	public:
@@ -24,7 +43,10 @@ namespace seneca {
 		double& price();
 
 		template<typename T>
-		void fixSpelling(T& spellChecker) { spellChecker(m_description); }
+		void fixSpelling(T& spellChecker) { 
+			spellChecker(m_description);
+			spellChecker(m_title);
+		}
 
 		friend std::ostream& operator <<(std::ostream& os, const Book& book);
 	};

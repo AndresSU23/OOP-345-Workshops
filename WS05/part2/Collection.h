@@ -1,3 +1,22 @@
+/***********************************************************************
+// Workshop 5 Part 2
+// Module: Collection
+// File: Collection.h
+// Version 1.0
+// Author
+// Description
+//	Name      : David Andres Sanchez Umbarila
+//	Student ID: 140273228
+//	Email     : dasanchez-umbarila@myseneca.ca
+//
+//	I have done all the coding by myself and only copied the code
+//	 that my professor provided to complete my workshops and
+//	 assignments.
+// Revision History
+// -----------------------------------------------------------
+// Name                 Date            Reason
+***********************************************************************/
+
 #pragma once
 #ifndef SENECA_COLLECTION_H
 #define SENECA_COLLECTION_H
@@ -11,7 +30,7 @@ namespace seneca {
         T* m_array{ nullptr };
         size_t m_size{ 0 };
 		
-		void (*functionPtr)(const Collection<T>&, const T&);
+        void (*functionPtr)(const Collection<T>&, const T&) {nullptr};
 
 	public:
         Collection(const std::string& name) : m_name(name) {};
@@ -49,7 +68,7 @@ namespace seneca {
         }
         T& operator[](size_t idx) const {
             if (idx >= m_size) {
-                throw std::out_of_range("Bad index " + std::to_string(idx) + ". Collection has " + std::to_string(m_size) + " items.");
+                throw std::out_of_range("Bad index [" + std::to_string(idx) + "]. Collection has [" + std::to_string(m_size) + "] items.");
             }
             return m_array[idx];
         }
