@@ -56,7 +56,7 @@ int main(int argc, char** argv)
 
 		int count = 0;
 		std::string line;
-		while (count < 3 && std::getline(file, line)) {
+		while (count < 4 && std::getline(file, line)) {
 			if (!line.empty() && line[0] != '#') {
 				count++;
 				library += seneca::Book(line);
@@ -123,10 +123,6 @@ int main(int argc, char** argv)
 	// Process the file
 	seneca::Movie movies[5];
 	if (argc > 2) {
-		// TODO: load 5 movies from the file "argv[2]".
-		//       - read one line at a time, and pass it to the Movie constructor
-		//       - store each movie read into the array "movies"
-		//       - lines that start with "#" are considered comments and should be ignored
 		std::ifstream file(argv[2]);
 		if (!file.is_open()) {
 			std::cerr << "Error: Cannot open file " << argv[2] << std::endl;
