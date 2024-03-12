@@ -99,8 +99,8 @@ namespace seneca {
     }
 
     void Student::display(std::ostream& out) const {
-        out << "| " << std::left << std::setw(10) << status() << " | "
-            << std::setw(10) << m_id << " | "
+        out << "| " << std::left << std::setw(9) << status() << " | "
+            << std::setw(9) << m_id << " | "
             << std::setw(20) << m_name << " | "
             << std::setw(3) << m_age << " |";
         for (size_t i = 0; i < m_count; ++i) {
