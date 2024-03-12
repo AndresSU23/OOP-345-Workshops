@@ -21,9 +21,9 @@
 #ifndef SENECA_COLLEGE_H
 #define SENECA_COLLEGE_H
 
+#include "Employee.h"
 #include <iostream>
 #include <vector>
-#include "employee.h"
 #include <list>
 
 namespace seneca {

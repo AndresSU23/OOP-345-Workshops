@@ -17,7 +17,6 @@
 // Name                 Date            Reason
 ***********************************************************************/
 
-
 #pragma once
 #ifndef SENECA_PROFESSOR_H
 #define SENECA_PROFESSOR_H

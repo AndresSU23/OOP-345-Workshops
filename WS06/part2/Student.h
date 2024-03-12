@@ -32,8 +32,8 @@ namespace seneca {
         std::string m_id;
         std::string m_name;
         std::string m_age;
-        std::string* m_courses;
-        size_t m_count;
+        std::string* m_courses{ nullptr };
+        size_t m_count{0};
 
     public:
         Student(std::istream& in);
