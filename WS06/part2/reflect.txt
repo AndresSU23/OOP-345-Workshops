@@ -1,0 +1,38 @@
+/***********************************************************************
+// Workshop 6 Part 2
+// Module: Reflect
+// File: reflect.txt
+// Version 1.0
+// Author
+// Description
+//	Name      : David Andres Sanchez Umbarila
+//	Student ID: 140273228
+//	Email     : dasanchez-umbarila@myseneca.ca
+//
+//	I have done all the coding by myself and only copied the code
+//	 that my professor provided to complete my workshops and
+//	 assignments.
+// Revision History
+// -----------------------------------------------------------
+// Name                 Date            Reason
+***********************************************************************/
+
+During this workshop, we used the concepts of dynamic memory, data 
+loading from iostream, error handling, and the introduction of 
+containers like vectors or lists. In the first place, we were required 
+to handle dynamic memory, creating destructors for all the objects to 
+prevent memory leaks since deacloocating the vector itself wouldn't 
+free all the information. We had to iterate through each object to set 
+the space free. During the creation of the load data function, there are 
+a lot of difficulties since there are multiple ways the data can be wrong, 
+creating different patterns and crashes across the program. For this, it 
+was necessary to create conditions that checked the quality of the input 
+and handled the errors. This is the appropriate solution since it reports 
+the error while continuing the processing and guarantees the safety of the 
+data. Finally, with the introduction of these new containers, we had the 
+opportunity to work with more flexible arrays with better ways to extract 
+information and iterate. This allowed us to have polimorphic objects 
+accessed through the object pointer, but all under the same base class 
+pointer. This workshop proved to be a good introduction to more complex 
+object relationships that have multiple behaviours under the same 
+structure as well as managing information in a more efficient way.
