@@ -18,9 +18,9 @@
 ***********************************************************************/
 
 
-#include "utilities.h"
-#include "student.h"
-#include "professor.h"
+#include "Utilities.h"
+#include "Student.h"
+#include "Professor.h"
 #include <sstream>
 
 namespace seneca {

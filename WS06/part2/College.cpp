@@ -16,7 +16,7 @@
 // -----------------------------------------------------------
 // Name                 Date            Reason
 ***********************************************************************/
-#include "college.h"
+#include "College.h"
 #include <iomanip>
 #include <iostream>
 

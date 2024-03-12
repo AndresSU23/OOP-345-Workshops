@@ -17,13 +17,14 @@
 // Name                 Date            Reason
 ***********************************************************************/
 
-#include "student.h"
+#include "Student.h"
+#include "Employee.h"
 #include <sstream>
 #include <stdexcept>
 #include <iostream>
 #include <algorithm>
 #include <iomanip>
-#include "Employee.h"
+
 
 
 namespace seneca {

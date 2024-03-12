@@ -22,7 +22,7 @@
 #ifndef SENECA_PROFESSOR_H
 #define SENECA_PROFESSOR_H
 
-#include "employee.h"
+#include "Employee.h"
 #include <string>
 
 namespace seneca {

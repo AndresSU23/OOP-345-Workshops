@@ -22,7 +22,7 @@
 #ifndef SENECA_STUDENT_H
 #define SENECA_STUDENT_H
 
-#include "person.h"
+#include "Person.h"
 #include <string>
 
 namespace seneca {

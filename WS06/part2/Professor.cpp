@@ -18,7 +18,7 @@
 ***********************************************************************/
 
 
-#include "professor.h"
+#include "Professor.h"
 
 namespace seneca {
 

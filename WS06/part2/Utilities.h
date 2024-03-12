@@ -21,7 +21,7 @@
 #ifndef SENECA_UTILITIES_H
 #define SENECA_UTILITIES_H
 
-#include "employee.h"
+#include "Employee.h"
 #include <iostream>
 
 namespace seneca {
