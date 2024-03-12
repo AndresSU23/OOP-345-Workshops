@@ -26,7 +26,7 @@
 namespace seneca {
 
     Person* buildInstance(std::istream& in) {
-        char tag, garbage;
+        char tag{}, garbage{};
         in >> tag;
         in >> garbage;
         if (tag == 's' || tag == 'S') {
