@@ -80,8 +80,8 @@ namespace seneca {
     }
 
     void Employee::display(std::ostream& out) const {
-        out << "| " << std::left << std::setw(10) << "Employee" << " | "
-            << std::setw(10) << id() << " | "
+        out << "| " << std::left << std::setw(9) << "Employee" << " | "
+            << std::setw(9) << id() << " | "
             << std::setw(20) << name() << " | "
             << std::setw(3) << age() << " |";
     }
