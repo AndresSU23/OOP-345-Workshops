@@ -108,6 +108,5 @@ namespace seneca {
             if (i < m_count - 1)
                 out << ", ";
         }
-        out;
     }
 }
