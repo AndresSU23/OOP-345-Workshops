@@ -51,8 +51,8 @@ namespace seneca {
         out << "------------------------------------------------------------------------------------------------------------------------" << std::endl;
         for (const auto& person : m_persons) {
             if (!person->id().empty()) {
-                out << "| " << std::left << std::setw(10) << person->status() << " | "
-                    << std::setw(10) << person->id() << " | "
+                out << "| " << std::left << std::setw(9) << person->status() << " | "
+                    << std::setw(9) << person->id() << " | "
                     << std::setw(20) << person->name() << " | "
                     << std::setw(3) << person->age() << " |" << std::endl;
             }
