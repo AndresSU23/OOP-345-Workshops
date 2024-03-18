@@ -1,0 +1,24 @@
+Throughout this workshop, I employed several essential STL functions
+such as `std::sort`, `std::remove_if`, `std::find_if`
+, and `std::copy_if`, each chosen for its specific functionality and 
+efficiency. For instance, `std::accumulate` was utilized in calculating 
+the total playtime of the song collection due to its ability to sum up 
+elements in a range efficiently. Similarly, `std::sort` played a 
+crucial role in sorting songs based on different fields, offering 
+a straightforward and optimized solution compared to manual sorting 
+algorithms. These STL algorithms not only provided concise and readable 
+code but also helped reduce the chances of errors while often enhancing 
+performance due to their optimized implementations.
+
+One notable challenge encountered was ensuring the validity of the 
+field names passed as parameters to the function responsible for sorting
+the collection of songs. To mitigate this issue, a potential redesign
+could involve using enum classes to represent the valid fields, thus 
+allowing any errors to be detected by the compiler. For instance, 
+instead of passing a string parameter to the `sort` function, clients
+could specify the field using an enum class, such as `enum class 
+SortField { Title, Album, Length };`. Then, the `sort` function would
+accept this enum class parameter, ensuring that only valid field 
+names are used. This approach not only enhances type safety and code 
+readability but also significantly reduces the likelihood of errors by 
+preventing invalid inputs at compile time.
