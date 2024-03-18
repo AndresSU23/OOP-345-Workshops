@@ -69,10 +69,13 @@ void seneca::SongCollection::sort(const std::string& field) {
 }
 
 void seneca::SongCollection::cleanAlbum() {
-    songs.erase(std::remove_if(songs.begin(), songs.end(), [](const seneca::Song& song) {
-        return song.m_album == "[None]";
-        }), songs.end());
+    std::for_each(songs.begin(), songs.end(), [](Song& song) {
+        if (song.m_album == "[None]") {
+            song.m_album = "";
+        }
+        });
 }
+
 
 bool seneca::SongCollection::inCollection(const std::string& artist) const {
     return std::any_of(songs.begin(), songs.end(), [&artist](const Song& song) {
