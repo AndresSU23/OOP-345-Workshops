@@ -1,0 +1,43 @@
+/***********************************************************************
+// Workshop 8 Part 2
+// Module: Reflect
+// File: reflect.txt
+// Version 1.0
+// Author
+// Description
+//	Name      : David Andres Sanchez Umbarila
+//	Student ID: 140273228
+//	Email     : dasanchez-umbarila@myseneca.ca
+//
+//	I have done all the coding by myself and only copied the code
+//	 that my professor provided to complete my workshops and
+//	 assignments.
+// Revision History
+// -----------------------------------------------------------
+// Name                 Date            Reason
+***********************************************************************/
+
+During this workshop, I gained a deeper understanding of smart pointer 
+syntax and its advantages over raw pointers in C++. Smart pointers, 
+such as `std::shared_ptr`, provide automatic memory management by 
+handling the allocation and deallocation of memory for dynamically 
+allocated objects. This helps prevent memory leaks and dangling 
+pointers, improving the safety and robustness of the code.
+
+In my solution, I utilized smart pointers when implementing the `operator+=` 
+overload in the `List` class. By accepting `std::shared_ptr<T>` as 
+an argument and storing the raw pointer (`item.get()`) in the vector, 
+I ensured that memory is managed properly, and the objects are safely 
+owned by the `List`. This prevents issues such as double deletion or 
+memory leaks that can occur when using raw pointers.
+
+The difference between raw and smart pointer syntax in my solution 
+lies in memory management. Raw pointers require manual memory 
+management, including allocation and deallocation using `new` and 
+`delete` keywords. On the other hand, smart pointers automatically
+handle memory management, ensuring proper cleanup when the object 
+is no longer needed.
+
+Overall, this workshop enhanced my understanding of memory management
+techniques in C++, particularly the benefits of using smart pointers 
+for safer and more reliable code.
