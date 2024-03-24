@@ -130,6 +130,7 @@
     <Text Include="descriptions.txt" />
     <Text Include="prices_bad.txt" />
     <Text Include="prices_good.txt" />
+    <Text Include="reflect.txt" />
     <Text Include="sample_output.txt" />
   </ItemGroup>
   <ItemGroup>
