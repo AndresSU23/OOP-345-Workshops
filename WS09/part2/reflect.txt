@@ -1,0 +1,32 @@
+/***********************************************************************
+// Workshop 9 Part 2
+// Version 1.0
+// Author
+// Description
+//	Name      : David Andres Sanchez Umbarila
+//	Student ID: 140273228
+//	Email     : dasanchez-umbarila@myseneca.ca
+//
+//
+//	I have done all the coding by myself and only copied the code
+//	 that my professor provided to complete my workshops and
+//	 assignments.
+// Revision History
+// -----------------------------------------------------------
+// Name                 Date            Reason
+***********************************************************************/
+
+Completing this workshop enhanced my grasp of C++ concepts such as 
+binary file handling, function binding, multi-threading, and 
+synchronization. Binary files were utilized for efficient storage and 
+retrieval of map data in the `TreasureMap` class, offering advantages in
+data integrity and disk space usage. Function binding was crucial for 
+parallelizing tasks, demonstrated in the `findTreasure` method where 
+`std::bind` associated the treasure hunting function with map segments. 
+Multi-threading maximized CPU utilization by distributing workload across 
+threads, dynamically determined using `std::thread::hardware_concurrency()`. 
+Futures and packaged tasks facilitated synchronization and result
+retrieval, allowing for efficient parallel execution and aggregation of 
+treasure counts. Overall, this workshop provided practical insights into 
+optimizing performance through parallelism while emphasizing resource 
+management and thread coordination.
